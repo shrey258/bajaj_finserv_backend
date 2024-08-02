@@ -1,10 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(morgan('combined'));
+app.use(cors({
+  origin: '*'
+}));
 
 app.post('/bfhl', (req, res) => {
   const { data } = req.body;
