@@ -6,9 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(morgan('combined'));
-app.use(cors({
-  origin: '*'
-}));
+app.use(cors());
 
 app.post('/bfhl', (req, res) => {
   const { data } = req.body;
