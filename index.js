@@ -4,11 +4,12 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(morgan('combined'));
 app.use(cors({
   origin: 'https://bajaj-finserv-frontend-eight.vercel.app'
 }));
+app.use(express.json());
+app.use(morgan('combined'));
+
 
 app.post('/bfhl', (req, res) => {
   const { data } = req.body;
